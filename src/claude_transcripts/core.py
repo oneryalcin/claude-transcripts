@@ -139,7 +139,7 @@ def _parse_line(line: str) -> AnyMessage | dict:
     in newer CLI versions than the schema covers).
     """
     try:
-        return S.ClaudeCodeSessionSchemaV2159.model_validate_json(line).root
+        return S.ClaudeCodeSessionSchemaV2163.model_validate_json(line).root
     except Exception:
         return json.loads(line)
 
