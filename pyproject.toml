@@ -9,7 +9,7 @@ description = "Parse and inspect Claude Code session transcripts"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-# Zero runtime dependencies — stdlib only
+dependencies = ["pydantic>=2.0"]
 
 [project.scripts]
 claude-transcripts = "claude_transcripts.__main__:main"
