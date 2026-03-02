@@ -131,7 +131,7 @@ progress = [m for m in s.messages if isinstance(m, schema.ProgressMessage)]
 
 ## Architecture
 
-- **`_schema.py`** — Vendored Pydantic v2 models generated from [agent-schemas](https://github.com/oneryalcin/agent-schemas) JSON Schema (v2.1.59)
+- **`_schema.py`** — Vendored Pydantic v2 models generated from [agent-schemas](https://github.com/oneryalcin/agent-schemas) JSON Schema (v2.1.63)
 - **`core.py`** — Session loading, tool pairing, usage aggregation, path discovery
 - **`__main__.py`** — CLI interface
 
