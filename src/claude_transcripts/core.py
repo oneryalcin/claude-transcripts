@@ -298,7 +298,7 @@ def load(path: str | Path, *, include_progress: bool = False) -> Session:
     )
 
 
-CLAUDE_PROJECTS_DIR = Path.home() / ".claude" / "projects"
+from .paths import CLAUDE_PROJECTS_DIR
 
 
 def discover(

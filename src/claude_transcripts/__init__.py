@@ -1,11 +1,19 @@
 """Claude Code session transcript reader."""
 
-from .core import Session, ToolCall, Usage, AnyMessage, load, discover
-
-# Re-export schema types for power users who want full parity
-from . import _schema as schema
+from . import paths, status
 
 __all__ = [
     "Session", "ToolCall", "Usage", "AnyMessage", "load", "discover",
-    "schema",
+    "schema", "paths", "status",
 ]
+
+
+def __getattr__(name: str):
+    """Lazy import heavy modules (Pydantic) only when accessed."""
+    if name in ("Session", "ToolCall", "Usage", "AnyMessage", "load", "discover"):
+        from . import core
+        return getattr(core, name)
+    if name == "schema":
+        from . import _schema
+        return _schema
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
